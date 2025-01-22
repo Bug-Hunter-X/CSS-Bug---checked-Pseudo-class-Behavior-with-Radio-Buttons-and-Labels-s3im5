@@ -1,0 +1,19 @@
+The solution uses the general sibling combinator (`~`) to select all following labels associated with the checked radio button, and applies a class to the labels for better specificity:
+
+```css
+input[type="radio"] {
+  display: none; /* Hide the radio buttons visually */
+}
+
+input[type="radio"]:checked ~ label.radio-label {
+  color: blue;
+}
+
+label.radio-label {
+  display: inline-block; /* Ensure proper layout */
+  padding: 5px; /* Add some spacing */
+  cursor: pointer; /* Indicate interactivity */
+}
+```
+
+This approach correctly styles the labels regardless of the number of radio buttons or intervening elements.  The added class `radio-label` to labels improves targeting specificity and maintainability. 
