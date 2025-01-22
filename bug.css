@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an uncommon error related to the `:checked` pseudo-class and radio buttons within a label element:
+
+```css
+input[type="radio"]:checked + label {
+  color: blue;
+}
+```
+
+This code intends to change the color of a label when the associated radio button is checked.  However, it may not work as expected if there are multiple radio buttons with the same name and only one can be selected.  If multiple radio buttons are present, even if only one is checked the color change might not occur.  The `+` (adjacent sibling combinator) only selects the immediately following label. If there are other elements between the radio button and the label, the style won't apply.
